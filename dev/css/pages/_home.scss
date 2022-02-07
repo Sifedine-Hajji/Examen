@@ -2,6 +2,16 @@
 // Homepage titles
 .titles {
     text-align: center;
+    margin: 0 0 80px;
+    h2 {
+        font-size: 30px;
+        font-weight: 600;
+        margin: 20px 0 10px;
+    }
+    span {
+        color: gray;
+        font-size: 12px;
+    }
 }
 // grid display containers
 .cities,.package-ct,.services,.client-comments,.blog-tiles,.gallery {
@@ -46,5 +56,284 @@
             line-height: 20px;
             margin: 0 0 20px 0;
         }
+    }
+}
+
+
+// =================== POPULAR DESTINATIONS SECTION ===================
+.destinations {
+    padding: 80px 0;
+}
+.cities {
+    @include grid(3,1,20px);
+    justify-items: center;
+
+    div {
+        &:nth-child(1) {
+            background: url('../assets/img/d1.jpg')no-repeat center/cover;
+        }
+        &:nth-child(2) {
+            background: url('../assets/img/d2.jpg')no-repeat center/cover;
+        }
+        &:nth-child(3) {
+            background: url('../assets/img/d3.jpg')no-repeat center/cover;
+        }
+    }
+
+    .city {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 200px;
+        color: white;
+        position: relative;
+        &::before {
+            content: '';
+            background: rgba(0, 0, 0, 0.308);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+        .destination-price {
+            padding: 5px 10px;
+            background: $yellow;
+            opacity: 0;
+            margin: 0 0 5px;
+            z-index: 2;
+        }
+        h3 {
+            margin: 0;
+            font-size: 18px;
+            z-index: 2;
+        }
+        span {
+            font-size: 14px;
+            z-index: 2;
+        }
+
+        &:hover {
+            &::before {
+                opacity: 1;
+                transition: .4s all ease-in-out;
+            }
+            .destination-price {
+                opacity: 1;
+                transition: .4s all ease-in-out;
+            }
+        }
+    }
+}
+
+
+// =================== PACKAGES PRICE SECTION ===================
+.package-prices {
+    background: url('../assets/img/price-bg.png')no-repeat center/cover;
+    padding: 80px 0;
+}
+
+.packages-ct {
+    @include grid (3,1,20px);
+}
+
+.package {
+    text-align: center;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3 {
+        font-size: 18px;
+    }
+    hr {
+        display: block; 
+        border: 0; 
+        width: 80%;
+        border-top: 1px solid $yellow;
+        margin: 1em 0; padding: 0; 
+    }
+    .price-per-city {
+        width: 80%;
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+
+            a {
+                padding: 10px 10px;
+                background: $gray-bg;
+                font-size: 14px;
+                font-weight: 700;
+                &:hover {
+                    background: $yellow;
+                    color: white;
+                    transition: .2s all ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+
+// =================== SERVICES SECTION ===================
+.other-services {
+    padding: 80px 0 ;
+}
+
+.services {
+    @include grid(4,1,20px);
+    .img-ct {
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .service {
+        &:hover {
+            img {
+                transform: scale(1.1)rotate(-2deg);
+                transition: .3s all ease-in-out;
+            }
+            h3 {
+                a {
+                    color: $yellow;
+                }
+            }
+        }
+
+        p {
+            color: gray;
+            line-height: 20px;
+            font-size: 14px;
+        }
+    }
+}
+
+
+// =================== RATINGS AND COMMENTS ===================
+.testimonials {
+    background: $gray-bg;
+    padding: 80px 0 200px ;
+}
+.clients-comments {
+    @include grid(2,1,20px);
+
+    .client {
+        background: white;
+        display: flex;
+
+        .user-img {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 150px;
+            img {
+                width: 30px;
+                margin: 20px 0;
+            }
+        }
+
+        p {
+            color: gray;
+            font-size: 16px;
+            line-height: 1.5;
+            width: 90%;
+        }
+        h3 {
+           font-size: 18px; 
+           margin: 0 0 10px;
+        }
+
+        .rating {
+            margin: 0 0 20px;
+            i {
+                font-size: 15px;
+                color: $yellow;
+            }
+        }
+    }
+}
+
+
+// =================== CUSTOM PRICE REQUESTS ===================
+.cp-requests {
+    @include flex;
+    
+    .left {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .titles {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            span {
+                width: 400px;
+                line-height: 1.5;
+            }
+            .btn {
+                margin: 40px 0 0;
+            }
+        }
+    }
+    .right {
+        width: 50%;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+// =================== BLOG VISUAL SECTION ===================
+.blog {
+    padding: 80px 0;
+}
+.blog-tiles {
+    @include grid(3,1,20px);
+}
+.tile {
+    .img-ct {
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    &:hover {
+        img {
+            transform: scale(1.1);
+            transition: .3s all ease-in-out;
+        }
+    }
+
+
+    .category-pills {
+        margin: 30px 0;
+    }
+    h3 {
+        &:hover {
+            a {
+                color: $yellow;   
+                transition: .3s all ease-in-out;
+            }
+            
+        }
+    }
+    p {
+        color: gray;
+        font-size: 14px;
+    }
+    span {
+        font-size: 14px;
     }
 }

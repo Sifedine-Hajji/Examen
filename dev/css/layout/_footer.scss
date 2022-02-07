@@ -1,0 +1,79 @@
+// =================== FOOTER SECTION ===================
+footer {
+    background: $footer-bg;
+    color: gray;
+}
+h3 {
+    color: white;
+    font-size: 16px;
+}
+.top-footer {
+    @include grid(4,1,10px);
+
+    .about {
+        p {
+            font-size: 13px;
+            line-height: 1.5;
+        }
+    }
+    .navigation {
+        .navigation-links {
+            @include flex($justify:space-between);
+            ul {
+                margin: 0;
+                li{
+                    padding: 5px 0;
+                    &:nth-child(1) {
+                        padding-top: 0px;
+                    }
+                    a {
+                        color: gray;
+                        font-size: 13px;
+                        &:hover {
+                            color: $yellow;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    .newsletter {
+        p {
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .input {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            i {
+                background: $yellow;
+                color: white;
+                padding: 12px;
+                position: absolute;
+                right: 0;
+            }
+        }
+
+        input[type=email] {
+            background: none;
+            outline: none;
+            border: 1px solid gray;
+            height: 40px;
+            width: 250px;
+            color: white;
+            &::placeholder {
+                font-size: 14px;
+                padding-left: 10px;
+            }
+        }
+    }
+
+    .insta-feed {
+        .gallery {
+            @include grid(4,2,10px);
+        }
+    }
+}
