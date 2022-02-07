@@ -33,6 +33,10 @@ gulp.task("sassification", function () {
     .pipe(gulp.dest("prod/css"));
 });
 
+gulp.task("assetsification", function () {
+  return pipeline(gulp.src("dev/assets/**/*"), gulp.dest("prod/assets"));
+});
+
 gulp.task("htmlification", function () {
   return gulp.src("dev/*.html").pipe(gulp.dest("prod"));
 });
@@ -68,7 +72,9 @@ gulp.task(
     "htmlification",
     "sassification",
     "jsification",
+    "assetsification",
     function () {
+      gulp.watch("dev/assets/**/*", gulp.series("assetsification"));
       gulp.watch("dev/css/**/*.scss", gulp.series("sassification"));
       gulp.watch("dev/*.html", gulp.series("htmlification"));
       gulp.watch("dev/js/*.js", gulp.series("jsification"));
