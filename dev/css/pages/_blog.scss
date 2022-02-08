@@ -1,3 +1,4 @@
+// =================== GENERAL BLOG ===================
 .blog-banner {
     background: url('../assets/img/blog/hero-blog.jpg')no-repeat center/cover;
 }
@@ -8,49 +9,96 @@
 }
 
 .main {
-    @include grid(2,1, 10px)
+    @include grid(2, 1, 30px)
 }
 
+// =================== LEFT CONTAINER (ARTICLE) ===================
 .article {
+    border-bottom: 1px solid lightgray;
+    padding: 0 0 20px;
+
+    p {
+        line-height: 1.5;
+        color: gray;
+        font-size: 15px;
+    }
+
     .article-details {
-        @include grid(4,1,20px);
+        @include grid(4, 1, 20px);
 
         .article-infos {
             padding: 25px 10px;
             text-align: right;
 
+            a {
+                font-size: 14px;
+
+                &:hover {
+                    color: $yellow;
+                    transition: .2s all ease-in-out;
+                }
+            }
+
             .article-category {
                 margin-bottom: 30px;
-                a {
-                    font-size: 14px;
-                    &:hover {
-                        color: $yellow;
-                        transition: .2s all ease-in-out;
-                    }
-                }
             }
 
             .more {
-                @include flex($direction:column,$align:flex-end);
+                @include flex($direction:column, $align:flex-end);
+
                 a {
+                    padding: 10px 0;
+                    color: gray;
+
                     &:nth-child(1) {
-                        .profile::after {
-                            font-family: "Font Awesome 5 Free"; 
-                            font-weight: 900; 
+                        &::after {
+                            font-family: "Font Awesome 5 Free";
                             content: "\f007";
+                            padding-left: 10px;
+                            color: black;
 
                         }
                     }
+
                     &:nth-child(2) {
                         &::after {
-                            font-family: "Font Awesome 5 Free"; 
-                            font-weight: 900; 
-                            content: "\f007";
+                            font-family: "Font Awesome 5 Free";
+                            content: "\f073";
+                            padding-left: 10px;
+                            color: black;
                         }
+                    }
+
+                    &:nth-child(3) {
+                        &::after {
+                            font-family: "Font Awesome 5 Free";
+                            content: "\f06e";
+                            padding-left: 10px;
+                            color: black;
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        &::after {
+                            font-family: "Font Awesome 5 Free";
+                            content: "\f075";
+                            padding-left: 10px;
+                            color: black;
+                        }
+                    }
+
+                    &:hover {
+                        color: $yellow;
                     }
                 }
             }
+
+            .socials {
+                padding: 15px 0;
+                @include flex($justify:space-around);
+            }
         }
+
         .article-txt {
             grid-column-end: span 3;
 
@@ -58,5 +106,266 @@
                 font-size: 24px;
             }
         }
+    }
+
+    .note {
+        background: white;
+        padding: 30px 25px;
+        line-height: 1.5;
+        color: gray;
+        font-size: 15px;
+    }
+
+    .post-img {
+        @include flex($justify:space-between);
+        margin: 30px 0;
+    }
+
+}
+
+.prev-next-post {
+    @include flex($justify:space-between);
+    padding: 25px 0;
+
+    .prev,
+    .next {
+        @include flex;
+
+        .post-title {
+            @include flex($direction:column, $align:flex-start);
+            padding: 0 0 0 15px;
+
+            span {
+                color: gray;
+                font-size: 14px;
+            }
+
+            h4 {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.comments {
+    border: 1px solid lightgray;
+    padding: 50px 10px;
+    margin: 20px 0 40px;
+
+    h4 {
+        text-align: center;
+        padding: 0 0 20px;
+        font-size: 20px;
+
+    }
+
+    .comment {
+        @include flex($justify:space-between);
+
+        &:nth-child(3) {
+            padding-left: 30px
+        }
+
+        &:nth-child(4) {
+            padding-left: 30px
+        }
+
+        .comment-details {
+            @include flex;
+        }
+
+        .commentary_detail {
+            padding: 10px;
+
+            h5 {
+                margin: 10px 0 0;
+                font-size: 15px;
+            }
+
+            span {
+                font-size: 12px;
+                color: lightgray;
+            }
+
+            p {
+                margin: 20px 0 0;
+                color: gray;
+                font-size: 14px;
+            }
+        }
+
+        a {
+            background: white;
+            padding: 10px 20px;
+            border: 1px solid lightgray;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold;
+            transition: .2s all ease-in-out;
+
+            &:hover {
+                background: $yellow;
+                color: white;
+            }
+        }
+    }
+}
+
+.comment-form {
+    border: 1px solid lightgray;
+    padding: 50px 20px;
+    text-align: center;
+
+    h4 {
+        text-align: center;
+        margin: 0;
+        padding: 0 0 20px;
+    }
+
+    form {
+        width: 100%;
+        @include flex($direction:column);
+
+        input {
+            width: 100%;
+            height: 40px;
+            border: none;
+            color: black;
+
+            &::placeholder {
+                font-size: small;
+                padding: 0 0 0 10px;
+            }
+
+            &:focus {
+                outline: 1px solid $yellow;
+            }
+        }
+
+        .email-name {
+            width: 100%;
+            margin: 0 0 20px;
+            @include grid(2, 1, 20px);
+        }
+
+        textarea {
+            width: 100%;
+            margin: 20px 0;
+            border: none;
+            font-size: small;
+
+            &::placeholder {
+                padding: 10px;
+            }
+
+            &:focus {
+                outline: 1px solid $yellow;
+            }
+        }
+    }
+
+    input[type=submit] {
+        border: none;
+        cursor: pointer;
+
+    }
+}
+
+
+// =================== RIGHT CONTAINER (SIDEBAR) ===================
+.sidebar {
+    @include flex($direction:column, $justify:flex-start);
+    border: 1px solid rgb(228, 228, 228);
+}
+
+.search-post {
+    width: 80%;
+    text-align: center;
+    position: relative;
+    margin: 40px 0;
+
+    .search-btn {
+        position: absolute;
+        background: $yellow;
+        height: 40px;
+        width: 50px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        right: 0;
+    }
+}
+
+input[type=search] {
+    background: $yellow;
+    border: none;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 30px;
+    width: 100%;
+    color: white;
+    position: relative;
+
+    &:focus {
+        outline: none;
+    }
+
+    &::placeholder {
+        color: white;
+        font-size: 14px;
+    }
+
+}
+
+.bloger,
+.bloger-infos {
+    @include flex($direction:column);
+    text-align: center;
+
+}
+
+.bloger-infos {
+    h4 {
+        margin: 30px 0 5px;
+        font-size: 18px;
+
+        a {
+            transition: .2s all ease-in-out;
+
+            &:hover {
+                color: $yellow;
+
+            }
+        }
+    }
+
+
+    span {
+        font-size: 14px;
+        color: gray;
+    }
+
+    .bloger-socials {
+        padding: 20px 0;
+        width: 35%;
+        @include flex($justify:space-between);
+        font-size: 14px;
+
+        a {
+            transition: .2s all ease-in-out;
+
+            &:hover {
+                color: $yellow;
+            }
+        }
+    }
+
+    .bloger-status {
+        color: gray;
+        width: 80%;
+        font-size: 14px;
+        line-height: 1.5;
     }
 }

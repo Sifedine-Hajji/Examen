@@ -91,7 +91,7 @@
                                     <a href="#">Lifestyle</a>
                                 </div>
                                 <div class="more">
-                                    <a href="#">Mark wiens <span class="profile"></span></a>
+                                    <a href="#">Mark wiens</a>
                                     <a href="#">12 Dec, 2017 </a>
                                     <a href="#">1.2M Views </a>
                                     <a href="#">06 Comments</a>
@@ -155,12 +155,12 @@
                             self-imposed MCSE training.
                         </div>
 
-                        <div class="other-img">
+                        <div class="post-img">
                             <div>
-                                <img src="" alt="">
+                                <img src="./assets/img/blog/post-img1.jpg" alt="post1">
                             </div>
                             <div>
-                                <img src="" alt="">
+                                <img src="./assets/img/blog/post-img2.jpg" alt="post2">
                             </div>
                         </div>
 
@@ -203,45 +203,56 @@
                         <div class="comment">
                             <div class="comment-details">
                                 <img src="./assets/img/blog/c1.jpg" alt="comment1">
-                                <h5>Emily Blunt</h5>
-                                <span>December 4, 2017 at 3:12 pm</span>
-                                <p>Never Say goodbye till the end comes!</p>
+                                <div class="commentary_detail">
+                                    <h5>Emily Blunt</h5>
+                                    <span>December 4, 2017 at 3:12 pm</span>
+                                    <p>Never Say goodbye till the end comes!</p>
+                                </div>
+
                             </div>
                             <a href="#">Reply</a>
                         </div>
                         <div class="comment">
                             <div class="comment-details">
                                 <img src="./assets/img/blog/c2.jpg" alt="comment1">
-                                <h5>Emily Blunt</h5>
-                                <span>December 4, 2017 at 3:12 pm</span>
-                                <p>Never Say goodbye till the end comes!</p>
+                                <div class="commentary_detail">
+                                    <h5>Emily Blunt</h5>
+                                    <span>December 4, 2017 at 3:12 pm</span>
+                                    <p>Never Say goodbye till the end comes!</p>
+                                </div>
                             </div>
                             <a href="#">Reply</a>
                         </div>
                         <div class="comment">
                             <div class="comment-details">
                                 <img src="./assets/img/blog/c3.jpg" alt="comment1">
-                                <h5>Emily Blunt</h5>
-                                <span>December 4, 2017 at 3:12 pm</span>
-                                <p>Never Say goodbye till the end comes!</p>
+                                <div class="commentary_detail">
+                                    <h5>Emily Blunt</h5>
+                                    <span>December 4, 2017 at 3:12 pm</span>
+                                    <p>Never Say goodbye till the end comes!</p>
+                                </div>
                             </div>
                             <a href="#">Reply</a>
                         </div>
                         <div class="comment">
                             <div class="comment-details">
                                 <img src="./assets/img/blog/c4.jpg" alt="comment1">
-                                <h5>Emily Blunt</h5>
-                                <span>December 4, 2017 at 3:12 pm</span>
-                                <p>Never Say goodbye till the end comes!</p>
+                                <div class="commentary_detail">
+                                    <h5>Emily Blunt</h5>
+                                    <span>December 4, 2017 at 3:12 pm</span>
+                                    <p>Never Say goodbye till the end comes!</p>
+                                </div>
                             </div>
                             <a href="#">Reply</a>
                         </div>
                         <div class="comment">
                             <div class="comment-details">
                                 <img src="./assets/img/blog/c5.jpg" alt="comment1">
-                                <h5>Emily Blunt</h5>
-                                <span>December 4, 2017 at 3:12 pm</span>
-                                <p>Never Say goodbye till the end comes!</p>
+                                <div class="commentary_detail">
+                                    <h5>Emily Blunt</h5>
+                                    <span>December 4, 2017 at 3:12 pm</span>
+                                    <p>Never Say goodbye till the end comes!</p>
+                                </div>
                             </div>
                             <a href="#">Reply</a>
                         </div>
@@ -252,18 +263,178 @@
 
                         <form action="post">
                             <div class="email-name">
-                                <input type="text" name="name" id="name" placeholder="Enter Name">
-                                <input type="email" name="email" id="email" placeholder="Enter email address">
+                                <div>
+                                    <input type="text" name="name" id="name" placeholder="Enter Name">
+                                </div>
+                                <div>
+                                    <input type="email" name="email" id="email" placeholder="Enter email address">
+                                </div>
+
                             </div>
-                            <input type="text" name="subject" id="subject">
+                            <input type="text" name="subject" id="subject" placeholder="Subject">
                             <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
                         </form>
-                        <input type="submit" value="Post Comment">
+                        <input class="btn yellow" type="submit" value="Post Comment">
                     </div>
                 </div>
 
                 <div class="sidebar">
-                    <h1>Bonjou je suis la vilaine sidebar</h1>
+                    <div class="search-post">
+                        <input type="search" name="search" id="search" placeholder="Search Posts">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+
+                    <hr>
+
+                    <div class=" bloger">
+                        <img src="./assets/img/blog/user-info.png" alt="user-profile-pic">
+                        <div class="bloger-infos">
+                            <h4><a href="#">Charlie Barber</a></h4>
+                            <span>Senior blog writer</span>
+                            <div class="bloger-socials">
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fas fa-basketball-ball"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-behance"></i>
+                                </a>
+                            </div>
+                            <p class="bloger-status">
+                                Boot camps have its supporters andit sdetractors. Some people do not understand why you
+                                should have to spend money on boot camp when you can get. Boot camps have itssuppor ters
+                                andits detractors.
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="popular-posts">
+                        <h2 class="sidebar-yellow-title">Popular Posts</h2>
+
+                        <div class="post">
+                            <a href="#">
+                                <img src="./assets/img/blog/pp1.jpg" alt="pp1">
+                            </a>
+                            <div class="post-infos">
+                                <h5>Space The Final Frontier</h5>
+                                <span>02 Hour ago</span>
+                            </div>
+                        </div>
+                        <div class="post">
+                            <a href="#">
+                                <img src="./assets/img/blog/pp2.jpg" alt="pp2">
+                            </a>
+                            <div class="post-infos">
+                                <h5>The Amazing Hubble</h5>
+                                <span>02 Hour ago</span>
+                            </div>
+                        </div>
+                        <div class="post">
+                            <a href="#">
+                                <img src="./assets/img/blog/pp3.jpg" alt="pp3">
+                            </a>
+                            <div class="post-infos">
+                                <h5>Astronomy Or Astrology</h5>
+                                <span>02 Hour ago</span>
+                            </div>
+                        </div>
+                        <div class="post">
+                            <a href="#">
+                                <img src="./assets/img/blog/pp4.jpg" alt="pp4">
+                            </a>
+                            <div class="post-infos">
+                                <h5>Asteroids telescope</h5>
+                                <span>02 Hour ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="ad">
+                        <img src="./assets/img/blog/ads-banner.jpg" alt="ads-banner">
+                    </div>
+
+                    <hr>
+
+                    <div class="post-catergories">
+                        <h2 class="sidebar-yellow-title">Post Categories</h2>
+
+                        <ul class="categories">
+                            <li>
+                                Technology <span>37</span>
+                            </li>
+                            <li>
+                                Lifestyle <span>24</span>
+                            </li>
+                            <li>
+                                Fashion <span>59</span>
+                            </li>
+                            <li>
+                                Art <span>29</span>
+                            </li>
+                            <li>
+                                Food <span>15</span>
+                            </li>
+                            <li>
+                                Architecture <span>09</span>
+                            </li>
+                            <li>
+                                Adventure <span>44</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <hr>
+
+                    <div class="newsletter">
+                        <h2 class="sidebar-yellow-title">Newsletter</h2>
+                        <p>
+                            Here, I focus on a range of items and features that we use in life without giving them a
+                            second thought.
+                        </p>
+
+                        <div class="news-sub">
+                            <input type="email" name="" id="" placeholder="Enter email">
+                            <button class="search-btn">
+                                Subscibe
+                            </button>
+                        </div>
+                        <span>You can unsubscribe at any time</span>
+                    </div>
+
+                    <hr>
+
+                    <div class="tags">
+                        <h2 class="sidebar-yellow-title">Tag Clouds</h2>
+                        <div class="tags-pills">
+                            <a href="#">Technology</a>
+                            <a href="#">Fashion</a>
+                            <a href="#">Architecture</a>
+                            <a href="#">Fashion</a>
+                            <a href="#">Food</a>
+                            <a href="#">Technology</a>
+                            <a href="#">Lifestyle</a>
+                            <a href="#">Art</a>
+                            <a href="#">Adventure</a>
+                            <a href="#">Food</a>
+                            <a href="#">Lifestyle</a>
+                            <a href="#">Adventure</a>
+                        </div>
+                    </div>
+
+
+
+
                 </div>
             </div>
         </div>
