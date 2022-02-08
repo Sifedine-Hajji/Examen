@@ -1,0 +1,23 @@
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 15px 10px;
+    background:rgba(255, 255, 255, 0.199);
+    &.active {
+        background:rgba(0, 0, 0, 0.384);
+    }
+
+    .nav-links {
+        a {
+            text-transform: uppercase;
+            padding: 20px 10px;
+            &:hover {
+                color: $yellow;
+                transition: .3s all ease-in-out;
+            }
+        }
+    }
+
+}

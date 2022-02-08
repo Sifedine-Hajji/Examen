@@ -3,18 +3,26 @@
 .titles {
     text-align: center;
     margin: 0 0 80px;
+
     h2 {
         font-size: 30px;
         font-weight: 600;
         margin: 20px 0 10px;
     }
+
     span {
         color: gray;
         font-size: 12px;
     }
 }
+
 // grid display containers
-.cities,.package-ct,.services,.client-comments,.blog-tiles,.gallery {
+.cities,
+.package-ct,
+.services,
+.client-comments,
+.blog-tiles,
+.gallery {
     display: grid;
 }
 
@@ -22,7 +30,7 @@
 .hero-banner {
     width: 100%;
     height: 100vh;
-    background: url('../../assets/img/hero-bg.jpg')no-repeat center/cover;
+    background: url('../assets/img/hero-bg.jpg')no-repeat center/cover;
     position: relative;
     display: flex;
     align-items: center;
@@ -30,7 +38,7 @@
     &::before {
         content: '';
         position: absolute;
-        background: rgba(0, 0, 0, 0.336);
+        background: rgba(0, 0, 22, 0.438);
         width: 100%;
         height: 100%;
     }
@@ -38,23 +46,33 @@
     .banner-txt {
         color: white;
         z-index: 2;
+
         span {
             text-transform: uppercase;
             font-size: 13.5px;
             letter-spacing: 1px;
         }
+
         h1 {
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 50px;
             margin: 15px 0;
         }
+
         p {
             width: 470px;
             font-size: 12px;
             color: lightgray;
             line-height: 20px;
             margin: 0 0 20px 0;
+        }
+
+        @include mobile {
+            padding: 0 10px;
+            p {
+                width: 100%;
+            }
         }
     }
 }
@@ -64,17 +82,25 @@
 .destinations {
     padding: 80px 0;
 }
+
 .cities {
-    @include grid(3,1,20px);
+    @include grid(3, 1, 20px);
     justify-items: center;
+
+    @include tablet {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding: 0 10px;
+    }
 
     div {
         &:nth-child(1) {
             background: url('../assets/img/d1.jpg')no-repeat center/cover;
         }
+
         &:nth-child(2) {
             background: url('../assets/img/d2.jpg')no-repeat center/cover;
         }
+
         &:nth-child(3) {
             background: url('../assets/img/d3.jpg')no-repeat center/cover;
         }
@@ -89,6 +115,7 @@
         height: 200px;
         color: white;
         position: relative;
+
         &::before {
             content: '';
             background: rgba(0, 0, 0, 0.308);
@@ -97,6 +124,7 @@
             height: 100%;
             opacity: 0;
         }
+
         .destination-price {
             padding: 5px 10px;
             background: $yellow;
@@ -104,11 +132,13 @@
             margin: 0 0 5px;
             z-index: 2;
         }
+
         h3 {
             margin: 0;
             font-size: 18px;
             z-index: 2;
         }
+
         span {
             font-size: 14px;
             z-index: 2;
@@ -119,6 +149,7 @@
                 opacity: 1;
                 transition: .4s all ease-in-out;
             }
+
             .destination-price {
                 opacity: 1;
                 transition: .4s all ease-in-out;
@@ -132,10 +163,18 @@
 .package-prices {
     background: url('../assets/img/price-bg.png')no-repeat center/cover;
     padding: 80px 0;
+
+    @include mobile {
+        padding: 0 10px
+    }
 }
 
 .packages-ct {
-    @include grid (3,1,20px);
+    @include grid (3, 1, 20px);
+
+    @include tablet {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
 }
 
 .package {
@@ -144,22 +183,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
     h3 {
         font-size: 18px;
     }
+
     hr {
-        display: block; 
-        border: 0; 
+        display: block;
+        border: 0;
         width: 80%;
         border-top: 1px solid $yellow;
-        margin: 1em 0; padding: 0; 
+        margin: 0 0 1em 0;
+        padding: 0;
     }
+
     .price-per-city {
         width: 80%;
+
         li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include flex($justify:space-between);
             margin: 10px 0;
 
             a {
@@ -167,6 +209,7 @@
                 background: $gray-bg;
                 font-size: 14px;
                 font-weight: 700;
+
                 &:hover {
                     background: $yellow;
                     color: white;
@@ -180,24 +223,36 @@
 
 // =================== SERVICES SECTION ===================
 .other-services {
-    padding: 80px 0 ;
+    padding: 80px 0;
+
+    @include mobile {
+        padding: 0 10px;
+    }
 }
 
 .services {
-    @include grid(4,1,20px);
+    @include grid(4, 1, 20px);
+
+    @include tablet {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
     .img-ct {
         overflow: hidden;
+
         img {
             width: 100%;
             height: 100%;
         }
     }
+
     .service {
         &:hover {
             img {
                 transform: scale(1.1)rotate(-2deg);
                 transition: .3s all ease-in-out;
             }
+
             h3 {
                 a {
                     color: $yellow;
@@ -217,10 +272,20 @@
 // =================== RATINGS AND COMMENTS ===================
 .testimonials {
     background: $gray-bg;
-    padding: 80px 0 200px ;
+    padding: 80px 0 200px;
+
+    @include mobile {
+        padding: 0 10px
+    }
+
 }
+
 .clients-comments {
-    @include grid(2,1,20px);
+    @include grid(2, 1, 20px);
+
+    @include mobile {
+        @include grid(1, 2, 20px);
+    }
 
     .client {
         background: white;
@@ -231,6 +296,7 @@
             justify-content: center;
             align-items: flex-start;
             width: 150px;
+
             img {
                 width: 30px;
                 margin: 20px 0;
@@ -242,14 +308,24 @@
             font-size: 16px;
             line-height: 1.5;
             width: 90%;
+
+            @include mobile {
+               font-size: 12px;
+            }
         }
+
         h3 {
-           font-size: 18px; 
-           margin: 0 0 10px;
+            font-size: 18px;
+            margin: 0 0 10px;
+
+            @include mobile {
+                font-size: 14px;
+            }
         }
 
         .rating {
             margin: 0 0 20px;
+
             i {
                 font-size: 15px;
                 color: $yellow;
@@ -262,32 +338,71 @@
 // =================== CUSTOM PRICE REQUESTS ===================
 .cp-requests {
     @include flex;
-    
+
+    @include mobile {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
     .left {
         width: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
 
+        @include mobile {
+            padding: 50px 0;
+            width: 100%;
+        }
+
         .titles {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             text-align: left;
+
+            @include mobile {
+                align-items: center;
+                text-align: center;
+
+                h2 {
+                    font-size: 20px;
+                }
+            }
+
+            @include tablet {
+                margin: 0;
+            }
+
             span {
                 width: 400px;
                 line-height: 1.5;
+
+                @include mobile {
+                    width: 100%;
+                }
             }
+
             .btn {
                 margin: 40px 0 0;
             }
         }
     }
+
     .right {
         width: 50%;
-        img {
+
+        @include mobile {
             width: 100%;
         }
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+
     }
 }
 
@@ -295,10 +410,19 @@
 // =================== BLOG VISUAL SECTION ===================
 .blog {
     padding: 80px 0;
+    @include mobile {
+        padding: 0 10px
+    }
 }
+
 .blog-tiles {
-    @include grid(3,1,20px);
+    @include grid(3, 1, 20px);
+
+    @include tablet {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
 }
+
 .tile {
     .img-ct {
         overflow: hidden;
@@ -308,7 +432,7 @@
             height: 100%;
         }
     }
-    
+
     &:hover {
         img {
             transform: scale(1.1);
@@ -320,19 +444,22 @@
     .category-pills {
         margin: 30px 0;
     }
+
     h3 {
         &:hover {
             a {
-                color: $yellow;   
+                color: $yellow;
                 transition: .3s all ease-in-out;
             }
-            
+
         }
     }
+
     p {
         color: gray;
         font-size: 14px;
     }
+
     span {
         font-size: 14px;
     }

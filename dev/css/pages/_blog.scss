@@ -1,0 +1,62 @@
+.blog-banner {
+    background: url('../assets/img/blog/hero-blog.jpg')no-repeat center/cover;
+}
+
+.blog {
+    padding: 80px 0;
+    background: $gray-bg;
+}
+
+.main {
+    @include grid(2,1, 10px)
+}
+
+.article {
+    .article-details {
+        @include grid(4,1,20px);
+
+        .article-infos {
+            padding: 25px 10px;
+            text-align: right;
+
+            .article-category {
+                margin-bottom: 30px;
+                a {
+                    font-size: 14px;
+                    &:hover {
+                        color: $yellow;
+                        transition: .2s all ease-in-out;
+                    }
+                }
+            }
+
+            .more {
+                @include flex($direction:column,$align:flex-end);
+                a {
+                    &:nth-child(1) {
+                        .profile::after {
+                            font-family: "Font Awesome 5 Free"; 
+                            font-weight: 900; 
+                            content: "\f007";
+
+                        }
+                    }
+                    &:nth-child(2) {
+                        &::after {
+                            font-family: "Font Awesome 5 Free"; 
+                            font-weight: 900; 
+                            content: "\f007";
+                        }
+                    }
+                }
+            }
+        }
+        .article-txt {
+            grid-column-end: span 3;
+
+            h3 {
+                font-size: 24px;
+            }
+        }
+    }
+}

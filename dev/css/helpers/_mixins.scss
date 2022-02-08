@@ -70,8 +70,20 @@ $desktop: 1920px;
     }
 }
 
+@mixin minmobile {
+    @media screen and (min-width: $mobile) {
+        @content;
+    }
+}
+
 @mixin tablet {
     @media screen and (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mintablet {
+    @media screen and (min-width: $tablet) {
         @content;
     }
 }

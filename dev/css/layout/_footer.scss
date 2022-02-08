@@ -2,21 +2,41 @@
 footer {
     background: $footer-bg;
     color: gray;
-}
-h3 {
-    color: white;
-    font-size: 16px;
+    padding: 80px 0;
+    @include mobile {
+        padding: 0 10px
+    }
+
+    hr {
+        display: block; 
+        border: 0; 
+        border-top: 1px solid gray;
+        margin: 1em 0; padding: 0; 
+    }
+    
+    h3 {
+        color: white;
+        font-size: 16px;
+    }
 }
 .top-footer {
     @include grid(4,1,10px);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+    @include mobile {
+        @include grid(1,4,10px);
+    }
 
     .about {
         p {
             font-size: 13px;
             line-height: 1.5;
+            width: 90%;
+            
         }
     }
     .navigation {
+        width: 200px;
         .navigation-links {
             @include flex($justify:space-between);
             ul {
@@ -36,12 +56,17 @@ h3 {
                 }
             }
         }
+
+        @include tablet {
+            width: 180px;
+        }
         
     }
     .newsletter {
         p {
             font-size: 13px;
             line-height: 1.5;
+
         }
 
         .input {
@@ -64,9 +89,16 @@ h3 {
             height: 40px;
             width: 250px;
             color: white;
+            @include tablet {
+                font-size: 12px;
+            }
             &::placeholder {
                 font-size: 14px;
                 padding-left: 10px;
+            }
+
+            @include tablet {
+                width: 200px
             }
         }
     }
@@ -74,6 +106,47 @@ h3 {
     .insta-feed {
         .gallery {
             @include grid(4,2,10px);
+            row-gap: 20px;
         }
     }
+
+}
+
+.credentials {
+    padding: 35px 0;
+    font-size: 14px;
+    @include flex($justify:space-between);
+
+    @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    span {
+        i {
+            color: $yellow;
+        }
+
+        a {
+            color: $yellow;
+        }
+
+        @include mobile {
+            padding: 0 0 20px;
+        }
+    }
+
+    .footer-socials {
+
+        a {
+            color: gray;
+            padding: 0 10px;
+            &:hover {
+                color: $yellow;
+                transition: .3s all ease-in-out;
+            }
+        }
+
+    }
+
 }

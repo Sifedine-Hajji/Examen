@@ -1,0 +1,98 @@
+.hotels-banner {
+    background: url('../assets/img/hotels/hero-hotels.jpg')no-repeat center/cover;
+}
+
+
+// =================== POPULAR DESTINATIONS(HOTELS) SECTION ===================
+.hotels-destinations {
+    padding: 80px 0;
+    background: $gray-bg;
+}
+
+.hotels {
+    @include grid(3, 2, 20px);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    .hotel {
+        background: white;
+        transition: .3s all ease-in-out;
+
+        &:hover {
+            -webkit-box-shadow: 0px 0px 26px 4px rgba(0, 0, 0, 0.84);
+            box-shadow: 0px 0px 26px 4px rgba(0, 0, 0, 0.84);
+        }
+    }
+
+    .hotel-img {
+        img {
+            width: 100%;
+        }
+    }
+
+    .hotel-details {
+        padding: 0 10px;
+
+        .name_rating-ct {
+            @include flex($justify:space-between);
+
+            span {
+                i {
+                    &:nth-child(1) {
+                        color: $yellow;
+                    }
+
+                    &:nth-child(2) {
+                        color: $yellow;
+                    }
+
+                    &:nth-child(3) {
+                        color: $yellow;
+                    }
+
+                    &:nth-child(4) {
+                        color: $yellow;
+                    }
+
+                }
+            }
+        }
+
+        .view-more {
+
+            &,
+            * {
+                color: gray;
+                font-size: 14px;
+            }
+
+            a {
+                &:hover {
+                    color: $yellow;
+                    transition: .2s all ease-in-out;
+                }
+            }
+        }
+
+        .hotel-services {
+            li {
+                @include flex($justify:space-between);
+                padding: 15px 0;
+                border-bottom: 1px solid lightgray;
+                font-size: 14px;
+                color: gray;
+
+                &:nth-last-child(1) {
+                    border-bottom: none;
+                }
+
+                .price-night {
+                    background: $yellow;
+                    padding: 5px 10px;
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+}
