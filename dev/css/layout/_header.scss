@@ -2,34 +2,43 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 1s ease-in-out;
 }
+
 .navigation-bar {
     position: fixed;
     z-index: 3;
+
     a {
         color: white;
         font-size: 12px;
     }
+
     .pre-nav {
         display: flex;
         width: 100%;
         justify-content: space-between;
         padding: 10px 10px;
+
         &.active {
-            background:rgba(0, 0, 0, 0.384);
+            background: rgba(0, 0, 0, 0.384);
         }
+
         .visit {
             a {
                 padding: 0 10px;
+
                 &:hover {
                     color: $yellow;
                     transition: .3s all ease-in-out;
                 }
             }
         }
+
         .socials {
             a {
                 padding: 0 5px;
+
                 &:hover {
                     color: $yellow;
                     transition: .3s all ease-in-out;
@@ -38,6 +47,47 @@ header {
         }
     }
 }
-.menu-burger {
+
+.navslide {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.856);
+    z-index: 4;
+    height: 100vh;
+    width: 100%;
     display: none;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+
+    .burger-links {
+        @include flex($direction:column, $justify:flex-start, $align:flex-start);
+        background: rgba(0, 0, 0, 0.795);
+        position: absolute;
+        top: 0;
+        width: 30%;
+        height: 100vh;
+        z-index: 5;
+        left: -100%;
+        transition: 1s all ease-in-out;
+        a {
+            color: white;
+            padding: 20px;
+            width: 100%;
+            transition: 1s all ease-in-out;
+            &:hover {
+                background: $yellow;
+                color: black;
+            }
+        }
+    }
+
+}
+.navslide.active {
+    display: flex;
+    left: 0;
+    opacity: 1;
+
+    .burger-links {
+        left: 0;
+        transition: 1s all ease-in-out;
+    }
 }

@@ -1,3 +1,16 @@
+const navSlide = () => {
+  const burger = document.querySelector(".menu-burger");
+  const nav = document.querySelector(".navslide");
+
+  // ajoute une classe au click sur les element seletionner ci-dessus
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+  nav.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+};
+
 const navColorChanging = () => {
   let posScrollPre = window.pageYOffset;
 
@@ -22,6 +35,7 @@ const navColorChanging = () => {
 
 // AU CAS OU ON A PLUSIEURS FONCTIONS
 const app = () => {
+  navSlide();
   navColorChanging();
 };
 // APPEL DE LA FONCTION APP POUR EFFECTUER TOUTES NOS FONCTIONS

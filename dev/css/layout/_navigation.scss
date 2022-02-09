@@ -20,4 +20,27 @@ nav {
         }
     }
 
+    .menu-burger {
+        @include flex($direction:column);
+        padding: 0 10px;
+        display: none;
+        cursor: pointer;
+        div {
+            width: 25px;
+            height: 1px;
+            margin:4px;
+            background: white;
+        }
+    }
+
+    @include tablet {
+        .nav-links {
+            display: none;
+        }
+
+        .menu-burger {
+            display:  flex;
+        }
+    }
+
 }

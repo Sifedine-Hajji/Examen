@@ -1,30 +1,67 @@
 // =================== GENERAL BLOG ===================
 .blog-banner {
     background: url('../assets/img/blog/hero-blog.jpg')no-repeat center/cover;
+
+    .banner-txt {
+        text-align: center;
+    }
 }
 
 .blog {
     padding: 80px 0;
     background: $gray-bg;
+    
+    @include tablet {
+        .wrapper {
+            width: 70%
+        }
+    }
+
+    @include mobile {
+        .wrapper {
+            width: 90%
+        }
+    }
 }
 
 .main {
-    @include grid(2, 1, 30px)
+    @include grid(3, 1, 30px);
+
+    @include tablet {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
 }
 
 // =================== LEFT CONTAINER (ARTICLE) ===================
+.left-ct {
+    grid-column-end: span 2;
+}
 .article {
     border-bottom: 1px solid lightgray;
     padding: 0 0 20px;
+
+    .article-img {
+        img {
+            width: 100%;
+        }
+    }
 
     p {
         line-height: 1.5;
         color: gray;
         font-size: 15px;
+
+        @include mobile {
+            font-size: 10px
+        }
     }
 
     .article-details {
         @include grid(4, 1, 20px);
+
+        @include mobile {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
 
         .article-infos {
             padding: 25px 10px;
@@ -41,10 +78,21 @@
 
             .article-category {
                 margin-bottom: 30px;
+
+                @include mobile {
+                    text-align: left;
+                    
+                }
             }
 
             .more {
                 @include flex($direction:column, $align:flex-end);
+
+                @include mobile {
+                    @include flex($justify:flex-start);
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
 
                 a {
                     padding: 10px 0;
@@ -114,11 +162,18 @@
         line-height: 1.5;
         color: gray;
         font-size: 15px;
+
+        @include mobile {
+            font-size: 10px
+        }
     }
 
     .post-img {
-        @include flex($justify:space-between);
-        margin: 30px 0;
+        @include grid(2, 1, 20px); 
+        justify-items: center;
+        img {
+            width: 100%;
+        }
     }
 
 }
@@ -126,10 +181,13 @@
 .prev-next-post {
     @include flex($justify:space-between);
     padding: 25px 0;
-
+    @include mobile {
+        flex-direction: column;
+    }
     .prev,
     .next {
         @include flex;
+
 
         .post-title {
             @include flex($direction:column, $align:flex-start);
@@ -144,6 +202,15 @@
                 margin-bottom: 0;
             }
         }
+    }
+
+    .next {
+        flex-direction: row-reverse;
+        .post-title {
+            align-items: flex-end;
+            padding-right: 15px;
+        }
+
     }
 }
 
@@ -265,21 +332,54 @@
     }
 
     input[type=submit] {
+        background: $yellow;
         border: none;
+        padding: 10px 20px;
+        font-size: 12px;
+        color: white;
+        text-transform: uppercase;
         cursor: pointer;
+        border: 1px solid $yellow;
+        transition: .2s all ease-in-out;
+        margin: 30px 0 0;
 
+        &:hover {
+            background: white;
+            color: $yellow;
+        }
     }
 }
 
 
 // =================== RIGHT CONTAINER (SIDEBAR) ===================
 .sidebar {
-    @include flex($direction:column, $justify:flex-start);
     border: 1px solid rgb(228, 228, 228);
+    padding: 0 20px;
+    grid-column-end: span 1;
+
+    @include tablet {
+        grid-column-end: span 2;
+    }
+
+    hr {
+        display: block;
+        border: 0;
+        border-top: 1px solid lightgray;
+        margin:  20px 0;
+        padding: 0;
+    }
+}
+
+.sidebar-yellow-title {
+    color: white;
+    background: $yellow;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 18px;
 }
 
 .search-post {
-    width: 80%;
+    width: 100%;
     text-align: center;
     position: relative;
     margin: 40px 0;
@@ -367,5 +467,132 @@ input[type=search] {
         width: 80%;
         font-size: 14px;
         line-height: 1.5;
+    }
+}
+
+
+.popular-posts {
+    width: 100%;
+}
+
+.post {
+    @include flex($justify:flex-start, $align:flex-start);
+    margin-bottom: 20px;
+
+    .post-infos {
+        padding: 0 10px;
+        h5 {
+            margin: 5px 0 5px;
+
+            &:hover {
+                
+                a {
+                    color: $yellow;
+
+                }
+            }
+        }
+        span {
+            font-size: 12px;
+            color: gray;
+        }
+    }
+}
+
+.ad {
+    img {
+        width: 100%;
+    }
+}
+
+.post-categories {
+    width: 100%;
+    font-size: 14px;
+    
+    .categories {
+        li {
+            @include flex($justify:space-between);
+            padding: 15px 0;
+            border-bottom: 1px solid lightgray;
+            cursor:pointer;
+            transition: .3s all ease-in-out;
+
+            &:hover {
+                border-bottom: 1px dotted $yellow;
+            }
+        }
+    }
+}
+
+.newsletter {
+    text-align: center;
+    color: gray;
+    font-size: 14px;
+    p {
+        line-height: 1.5;
+        margin: 20px 0 0;
+    }
+
+    .news-sub {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        margin: 30px 0 20px;
+    
+        .sub-btn {
+            position: absolute;
+            background: $yellow;
+            height: 40px;
+            width: 100px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            right: 0;
+            transition: .2s all ease-in-out;
+
+            &:hover {
+                background: $txt-btn;
+                color: white;
+            }
+        }
+    }
+
+}
+
+input[type=email] {
+    border: 1px solid lightgray;
+    height: 40px;
+    padding: 0 15px;
+    width: 100%;
+    position: relative;
+
+    &:focus {
+        outline: none;
+    }
+
+    &::placeholder {
+        color: gray;
+        font-size: 14px;
+    }
+
+}
+
+.tags {
+    .tags-pills {
+        @include flex();
+        flex-wrap: wrap;
+        a {
+            font-size: 12px;
+            padding: 5px 10px;
+            margin: 8px 5px ;
+            border: 1px solid lightgray;
+            color: gray;
+            transition: .2s all ease-in-out;
+
+            &:hover {
+                background: $yellow;
+                color: white;
+            }
+        }
     }
 }
